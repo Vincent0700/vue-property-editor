@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+/**
+ * style.scss
+ * @desc scss libraries of vue-property-editor
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-27
+ */
+
+/* Base Modules
+----------------------------------------------------------------*/
+@import "./base/reset"; // reset.scss
+@import "./base/fonts"; // font-faces
+@import "./base/mixins"; // reusable mixins
+
+/* Layout Modules
+----------------------------------------------------------------*/
+@import "./layout/panel"; // layout for Panel.vue

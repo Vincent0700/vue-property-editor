@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/**
+ * base/mixins.scss
+ * @desc reusable mixins
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-27
+ */
+
+@mixin wrapper($w: 100%, $h: auto) {
+  width: $w;
+  height: $h;
+  overflow: hidden;
+  position: relative;
+}

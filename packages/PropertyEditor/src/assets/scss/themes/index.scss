@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/**
+ * themes/index.scss
+ * @desc theme style entrance
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-27
+ */
+@import "./theme_dark"; // dark theme
+
+$themes: (
+  dark: $theme_dark
+);
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

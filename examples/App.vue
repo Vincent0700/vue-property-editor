@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <PropertyEditor/>
+    <PropertyEditor :theme="config.theme"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data() {
+    return {
+      config: {
+        theme: "dark"
+      }
+    };
+  }
 };
 </script>
 

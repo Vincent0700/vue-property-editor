@@ -1,14 +1,26 @@
 <template>
-  <div>
-    <h1>Hello World</h1>
+  <div :class="`theme-${theme}`">
+    <Panel/>
   </div>
 </template>
 
 <script>
+import Panel from "./components/Panel";
+
 export default {
-  name: "PropertyEditor"
+  name: "PropertyEditor",
+  components: {
+    Panel
+  },
+  props: {
+    theme: {
+      type: String,
+      default: "dark"
+    }
+  }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "assets/scss/style";
 </style>
