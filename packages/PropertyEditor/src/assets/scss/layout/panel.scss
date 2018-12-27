@@ -7,9 +7,7 @@
  * @date 2018-12-27
  */
 
-@import "../themes/index.scss";
-
-.layout_panel {
+.pe_panel {
   position: fixed;
   right: 0;
   top: 0;
@@ -17,6 +15,6 @@
   width: 320px;
 
   @include themify($themes) {
-    background: themed("panel_bg");
+    background-color: themed("panel_bg");
   }
 }

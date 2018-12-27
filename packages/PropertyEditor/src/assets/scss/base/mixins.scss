@@ -7,9 +7,8 @@
  * @date 2018-12-27
  */
 
-@mixin wrapper($w: 100%, $h: auto) {
+@mixin wrapper($w: 100%) {
   width: $w;
-  height: $h;
   overflow: hidden;
   position: relative;
 }

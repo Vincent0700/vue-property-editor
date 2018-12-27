@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/**
+ * layout/header.scss
+ * @desc layout for Header.vue
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-27
+ */
+
+.pe_header {
+  height: 32px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+
+  @include wrapper;
+  @include themify($themes) {
+    background-color: themed("panel_header_normal");
+  }
+}

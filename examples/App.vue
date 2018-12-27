@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <PropertyEditor :theme="config.theme"/>
+    <PropertyEditor
+        :theme="config.theme"
+        :header="config.header" />
   </div>
 </template>
 
@@ -10,7 +12,11 @@ export default {
   data() {
     return {
       config: {
-        theme: "dark"
+        theme: "dark",
+        header: {
+          title: "INSPECTOR",
+          icon_class: "fas fa-arrow-alt-circle-down"
+        }
       }
     };
   }

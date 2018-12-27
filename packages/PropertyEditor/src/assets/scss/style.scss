@@ -13,6 +13,11 @@
 @import "./base/fonts"; // font-faces
 @import "./base/mixins"; // reusable mixins
 
+/* Themes Modules
+----------------------------------------------------------------*/
+@import "./themes/index"; // themes
+
 /* Layout Modules
 ----------------------------------------------------------------*/
 @import "./layout/panel"; // layout for Panel.vue
+@import "./layout/header"; // layout for Header.vue

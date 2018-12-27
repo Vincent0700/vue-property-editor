@@ -1,6 +1,6 @@
 <template>
   <div :class="`theme-${theme}`">
-    <Panel/>
+    <Panel :header="header" />
   </div>
 </template>
 
@@ -16,6 +16,10 @@ export default {
     theme: {
       type: String,
       default: "dark"
+    },
+    header: {
+      type: Object,
+      required: true
     }
   }
 };
