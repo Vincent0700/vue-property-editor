@@ -7,14 +7,27 @@
  * @date 2018-12-27
  */
 
+@import "../base/mixins";
+@import "../themes/index";
+
 .pe_panel {
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
   width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
 
+  @include default_transition;
   @include themify($themes) {
-    background-color: themed("panel_bg");
+    color: themed("color_text_normal");
+    background-color: themed("color_panel_bg");
+    font-family: themed("font_content");
+  }
+
+  &.closed {
+    width: 32px;
   }
 }

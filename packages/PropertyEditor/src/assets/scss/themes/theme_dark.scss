@@ -8,8 +8,24 @@
  */
 
 $theme_dark: (
-  panel_bg: #364346,
-  panel_header_normal: #283538,
-  text_normal: #b1b8ba,
-  text_focus: #fff
+  color_panel_bg: #364346,
+  color_header_normal: #283538,
+  color_icon_normal: #f60,
+  color_icon_focus: #fff,
+  color_text_normal: #b1b8ba,
+  color_text_focus: #fff,
+  font_content: (
+    "Proxima Nova Regular",
+    "Helvetica Neue",
+    Arial,
+    Helvetica,
+    sans-serif
+  ),
+  font_header: (
+    "Proxima Nova Bold",
+    "Helvetica Neue",
+    Arial,
+    Helvetica,
+    sans-serif
+  )
 );

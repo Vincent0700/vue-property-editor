@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <PropertyEditor
-        :theme="config.theme"
-        :header="config.header" />
+    <PropertyEditor :config="config" />
   </div>
 </template>
 
@@ -13,15 +11,17 @@ export default {
     return {
       config: {
         theme: "dark",
-        header: {
-          title: "INSPECTOR",
-          icon_class: "fas fa-arrow-alt-circle-down"
-        }
+        title: "INSPECTOR"
       }
     };
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+#app {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
 </style>

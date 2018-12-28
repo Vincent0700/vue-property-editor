@@ -1,10 +1,13 @@
 <template>
-  <div :class="`theme-${theme}`">
-    <Panel :header="header" />
+  <div :class="`theme-${manifest.theme}`">
+    <Panel
+        :title="manifest.title"
+        :closed="manifest.closed" />
   </div>
 </template>
 
 <script>
+import Core from "./js/core";
 import Panel from "./components/Panel";
 
 export default {
@@ -13,14 +16,15 @@ export default {
     Panel
   },
   props: {
-    theme: {
-      type: String,
-      default: "dark"
-    },
-    header: {
+    config: {
       type: Object,
-      required: true
+      default: function() {
+        return {};
+      }
     }
+  },
+  data() {
+    return new Core(this, this.config);
   }
 };
 </script>

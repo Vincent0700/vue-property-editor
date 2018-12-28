@@ -7,8 +7,30 @@
  * @date 2018-12-27
  */
 
+@import "./variables";
+
 @mixin wrapper($w: 100%) {
   width: $w;
   overflow: hidden;
   position: relative;
+}
+
+@mixin icon-wrapper($w, $h) {
+  float: left;
+  width: $w;
+  height: $h;
+  line-height: $h;
+  text-align: center;
+}
+
+@mixin transition($prop, $time) {
+  -webkit-transition: $prop $time ease-out;
+  -moz-transition: $prop $time ease-out;
+  -ms-transition: $prop $time ease-out;
+  -o-transition: $prop $time ease-out;
+  transition: $prop $time ease-out;
+}
+
+@mixin default_transition() {
+  @include transition(all, $animate_time);
 }

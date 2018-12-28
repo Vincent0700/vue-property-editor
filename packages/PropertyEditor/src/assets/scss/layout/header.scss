@@ -7,13 +7,48 @@
  * @date 2018-12-27
  */
 
+@import "../base/mixins";
+@import "../themes/index";
+
 .pe_header {
-  height: 32px;
+  $height: 32px;
+
+  height: $height;
+  line-height: $height;
   text-overflow: ellipsis;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "Proxima Nova Bold";
 
   @include wrapper;
+  @include default_transition;
   @include themify($themes) {
-    background-color: themed("panel_header_normal");
+    color: themed("color_text_focus");
+    background-color: themed("color_header_normal");
+    font-family: themed("font_header");
   }
+
+  & > .icon {
+    cursor: pointer;
+
+    @include icon-wrapper($height, $height);
+    @include themify($themes) {
+      color: themed("color_icon_normal");
+    }
+
+    &:hover {
+      @include themify($themes) {
+        color: themed("color_icon_focus");
+      }
+    }
+  }
+
+  & > .title {
+    float: left;
+  }
+}
+
+.closed > .pe_header {
+  height: 100%;
+  writing-mode: vertical-rl;
+  background-color: transparent;
 }

@@ -1,8 +1,9 @@
 <template>
-  <div class="pe_panel">
+  <div :class="['pe_panel', {closed}]">
     <Header
-        :title="header.title"
-        :icon_class="header.icon_class" />
+        :title="title"
+        :closed="closed"
+        :toggle="true" />
   </div>
 </template>
 
@@ -15,8 +16,12 @@ export default {
     Header
   },
   props: {
-    header: {
-      type: Object,
+    closed: {
+      type: Boolean,
+      default: false
+    },
+    title: {
+      type: String,
       required: true
     }
   }
