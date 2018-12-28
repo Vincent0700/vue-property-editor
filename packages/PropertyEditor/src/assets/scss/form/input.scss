@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/**
+ * form/input.scss
+ * @desc input field
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-28
+ */
+
+@mixin form_input($width, $height) {
+  width: $width;
+  height: $height;
+  outline: none;
+  border: none;
+  background-color: #000;
+}

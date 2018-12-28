@@ -16,11 +16,8 @@
   top: 0;
   bottom: 0;
   width: 320px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
 
-  @include default_transition;
+  @include transition(all, 0.1s);
   @include themify($themes) {
     color: themed("color_text_normal");
     background-color: themed("color_panel_bg");

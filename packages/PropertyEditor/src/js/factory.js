@@ -8,11 +8,18 @@ export default class Factory {
 
   CreateManifest(config) {
     const default_cfg = get_config();
-    let { theme = default_cfg.theme, title = default_cfg.title } = config;
+    let {
+      theme = default_cfg.theme,
+      title = default_cfg.title,
+      groups = [],
+      properties = {}
+    } = config;
     return {
       theme,
       closed,
-      title
+      title,
+      groups,
+      properties
     };
   }
 

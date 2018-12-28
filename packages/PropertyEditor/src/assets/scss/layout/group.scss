@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/**
+ * layout/group.scss
+ * @desc layout for Group.vue
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-28
+ */
+
+.pe_group {
+  & > .content {
+    padding: 8px 6px;
+  }
+}

@@ -25,7 +25,7 @@ export default {
     },
     icon_class: {
       type: String,
-      default: "pe-icon pe-icon-arrow-circle-down"
+      default: ""
     }
   },
   methods: {
