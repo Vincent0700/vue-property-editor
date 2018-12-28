@@ -1,19 +1,28 @@
 <template>
   <div :class="['pe_panel', {closed}]">
     <Header
-        :title="title"
-        :closed="closed"
-        :toggle="true" />
+      icon_class="pe-icon pe-icon-arrow-circle-down"
+      :title="title"
+      :closed="closed"
+      :toggle="true" />
+    <Group
+      v-if="!closed"
+      v-for="(group,index) in groups" :key="index"
+      :title="group.title"
+      :rows="group.rows"
+      :properties="properties" />
   </div>
 </template>
 
 <script>
 import Header from "./Header";
+import Group from "./Group";
 
 export default {
   name: "Panel",
   components: {
-    Header
+    Header,
+    Group
   },
   props: {
     closed: {
@@ -23,6 +32,18 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    groups: {
+      type: Array,
+      default: function() {
+        return [];
+      }
+    },
+    properties: {
+      type: Object,
+      default: function() {
+        return {};
+      }
     }
   }
 };

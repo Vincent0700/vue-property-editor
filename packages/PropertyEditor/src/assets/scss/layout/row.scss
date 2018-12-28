@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/**
+ * layout/row.scss
+ * @desc layout for Row.vue
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-28
+ */
+
+@import "../base/mixins";
+@import "../form/input";
+
+.pe_row {
+  $height: 30px;
+
+  height: $height;
+  line-height: $height;
+  overflow: hidden;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  font-style: normal;
+
+  & > .input_row {
+    $margin: 3px;
+
+    @include row_2_items(30%, 3px, $height);
+
+    input {
+      @include form_input(calc(100% - #{2 * $margin}), 22px);
+    }
+  }
+}

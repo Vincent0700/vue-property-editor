@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <PropertyEditor :config="config" />
+    <ul>
+      <li><input type="text" v-model="data.name"></li>
+      <li><input type="number" v-model="data.age"></li>
+    </ul>
+    <PropertyEditor
+        :config="config" />
   </div>
 </template>
 
@@ -9,9 +14,37 @@ export default {
   name: "App",
   data() {
     return {
+      data: {
+        name: "Vincent",
+        age: 20
+      },
       config: {
         theme: "dark",
-        title: "INSPECTOR"
+        title: "INSPECTOR",
+        groups: [
+          {
+            rows: ["Name", "Age"]
+          },
+          {
+            title: "INFOMATION"
+          }
+        ],
+        properties: {
+          Name: {
+            type: "basic/string",
+            bind: {
+              object: this.data,
+              key: "name"
+            }
+          },
+          Age: {
+            type: "basic/number",
+            bind: {
+              object: this.data,
+              key: "age"
+            }
+          }
+        }
       }
     };
   }

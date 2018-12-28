@@ -2,7 +2,9 @@
   <div :class="`theme-${manifest.theme}`">
     <Panel
         :title="manifest.title"
-        :closed="manifest.closed" />
+        :closed="manifest.closed"
+        :groups="manifest.groups"
+        :properties="manifest.properties"/>
   </div>
 </template>
 

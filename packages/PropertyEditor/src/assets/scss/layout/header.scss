@@ -17,7 +17,6 @@
   line-height: $height;
   text-overflow: ellipsis;
   font-size: 12px;
-  font-family: "Proxima Nova Bold";
 
   @include wrapper;
   @include default_transition;
@@ -25,6 +24,9 @@
     color: themed("color_text_focus");
     background-color: themed("color_header_normal");
     font-family: themed("font_header");
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
   }
 
   & > .icon {
