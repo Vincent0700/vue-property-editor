@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import bus from "../js/bus";
-
 export default {
   name: "Row",
   props: {
@@ -47,18 +45,25 @@ export default {
         }
       }
 
+      // Commit changes if press enter
       if (key === "Enter") {
         this.beforeChange(event);
       }
     },
     beforeChange(event) {
       const type = this.info.type;
+      const old = this.info.bind.object[this.info.bind.key];
       let value = event.target.value;
 
+      // Base filter
       if (type === "integer") {
         value = parseInt(value);
       } else if (type === "float") {
         value = parseFloat(value);
+      }
+
+      if (this.info.filter) {
+        value = this.info.filter(old, value);
       }
 
       event.target.value = value;

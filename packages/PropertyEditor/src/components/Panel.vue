@@ -1,7 +1,7 @@
 <template>
   <div :class="['pe_panel', {closed}]">
     <Header
-      icon_class="pe-icon pe-icon-arrow-circle-down"
+      icon="<i class='pe-icon pe-icon-arrow-circle-down'></i>"
       :title="title"
       :closed="closed"
       :toggle="true" />
@@ -10,6 +10,7 @@
           v-if="!closed"
           v-for="(group,index) in groups" :key="index"
           :title="group.title"
+          :icon="group.icon"
           :rows="group.rows"
           :properties="properties" />
     </div>

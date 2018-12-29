@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <ul>
-      <li><input type="text" v-model="form.basic._string"></li>
-      <li><input type="number" v-model="form.basic._integer"></li>
-      <li><input type="number" v-model="form.basic._float"></li>
+      <li><input v-model="form.basic._string"></li>
+      <li><input v-model="form.basic._integer"></li>
+      <li><input v-model="form.basic._float"></li>
+      <li><input v-model="form.filter._email"></li>
     </ul>
     <PropertyEditor
         :config="config" />
@@ -20,6 +21,9 @@ export default {
           _string: "Vincent",
           _integer: 20,
           _float: 3.14159
+        },
+        filter: {
+          _email: "test@test.com"
         }
       }
     };
@@ -33,7 +37,9 @@ export default {
           rows: ["String", "Integer", "Float"]
         },
         {
-          title: "FILTER"
+          title: "FILTER",
+          icon: "<i class='pe-icon pe-icon-filter'></i>",
+          rows: ["Email"]
         }
       ],
       properties: {
@@ -56,6 +62,17 @@ export default {
           bind: {
             object: this.form.basic,
             key: "_float"
+          }
+        },
+        Email: {
+          type: "string",
+          bind: {
+            object: this.form.filter,
+            key: "_email"
+          },
+          filter: function(old_value, new_value) {
+            const pattern = /^([A-Za-z0-9_\-.\u4e00-\u9fa5])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,8})$/;
+            return pattern.test(new_value) ? new_value : old_value;
           }
         }
       }

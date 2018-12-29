@@ -2,7 +2,8 @@
   <div class="pe_group">
     <Header
       v-if="title"
-      :title="title" />
+      :title="title"
+      :icon="icon" />
     <div class="content">
       <Row
         v-for="(row,index) in GetRows()" :key="index"
@@ -23,6 +24,10 @@ export default {
   },
   props: {
     title: {
+      type: String,
+      default: ""
+    },
+    icon: {
       type: String,
       default: ""
     },

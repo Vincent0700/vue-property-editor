@@ -1,6 +1,6 @@
 <template>
   <div class="pe_header" >
-    <div class="icon" @click="TogglePanel()"><i :class="icon_class"></i></div>
+    <div class="icon" @click="TogglePanel()" v-html="`${icon?icon:'<i class=\'pe-icon pe-icon-default\'></i>'}`"></div>
     <div class="title">{{title}}</div>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
       type: String,
       default: "UNTITLED"
     },
-    icon_class: {
+    icon: {
       type: String,
       default: ""
     }
