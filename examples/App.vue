@@ -1,13 +1,15 @@
 <template>
   <div id="app">
+    <header></header>
     <ul>
-      <li><input v-model="form.basic._string"></li>
-      <li><input v-model="form.basic._integer"></li>
-      <li><input v-model="form.basic._float"></li>
-      <li><input v-model="form.filter._email"></li>
+      <li>{{form.basic._string}}</li>
+      <li>{{form.basic._integer}}</li>
+      <li>{{form.basic._integer}}</li>
     </ul>
-    <PropertyEditor
-        :config="config" />
+    <ul>
+      <li>{{form.filter._email}}</li>
+    </ul>
+    <PropertyEditor :config="config" />
   </div>
 </template>
 
@@ -85,6 +87,7 @@ export default {
 #app {
   width: 100%;
   height: 100vh;
-  background-color: #000;
+  background-color: #fff;
+  color: #666;
 }
 </style>
