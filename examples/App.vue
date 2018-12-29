@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <ul>
-      <li><input type="text" v-model="data.name"></li>
-      <li><input type="number" v-model="data.age"></li>
+      <li><input type="text" v-model="form.basic._string"></li>
+      <li><input type="number" v-model="form.basic._integer"></li>
+      <li><input type="number" v-model="form.basic._float"></li>
     </ul>
     <PropertyEditor
         :config="config" />
@@ -14,35 +15,47 @@ export default {
   name: "App",
   data() {
     return {
-      data: {
-        name: "Vincent",
-        age: 20
-      },
-      config: {
-        theme: "dark",
-        title: "INSPECTOR",
-        groups: [
-          {
-            rows: ["Name", "Age"]
-          },
-          {
-            title: "INFOMATION"
+      form: {
+        basic: {
+          _string: "Vincent",
+          _integer: 20,
+          _float: 3.14159
+        }
+      }
+    };
+  },
+  created() {
+    this.config = {
+      theme: "dark",
+      title: "PROPERTIES",
+      groups: [
+        {
+          rows: ["String", "Integer", "Float"]
+        },
+        {
+          title: "FILTER"
+        }
+      ],
+      properties: {
+        String: {
+          type: "string",
+          bind: {
+            object: this.form.basic,
+            key: "_string"
           }
-        ],
-        properties: {
-          Name: {
-            type: "basic/string",
-            bind: {
-              object: this.data,
-              key: "name"
-            }
-          },
-          Age: {
-            type: "basic/number",
-            bind: {
-              object: this.data,
-              key: "age"
-            }
+        },
+        Integer: {
+          type: "integer",
+          bind: {
+            object: this.form.basic,
+            key: "_integer"
+          }
+        },
+        Float: {
+          type: "float",
+          bind: {
+            object: this.form.basic,
+            key: "_float"
           }
         }
       }

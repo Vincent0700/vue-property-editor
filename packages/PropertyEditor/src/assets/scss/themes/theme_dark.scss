@@ -14,6 +14,10 @@ $theme_dark: (
   color_icon_focus: #fff,
   color_text_normal: #b1b8ba,
   color_text_focus: #fff,
+  color_form_bg_normal: #2c393c,
+  color_form_bg_focus: #20292b,
+  color_form_border_normal: #293538,
+  color_form_border_focus: #20292b,
   font_content: (
     "Proxima Nova Regular",
     "Helvetica Neue",
@@ -27,5 +31,14 @@ $theme_dark: (
     Arial,
     Helvetica,
     sans-serif
+  ),
+  font_input: (
+    "Inconsolata",
+    Monaco,
+    Menlo,
+    "Ubuntu Mono",
+    Consolas,
+    source-code-pro,
+    monospace
   )
 );

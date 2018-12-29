@@ -7,8 +7,14 @@
  * @date 2018-12-28
  */
 
-.pe_group {
-  & > .content {
-    padding: 8px 6px;
+@import "../base/mixins";
+
+.groups {
+  @include wrapper;
+
+  & > .pe_group {
+    & > .content {
+      padding: 8px 6px;
+    }
   }
 }

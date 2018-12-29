@@ -25,7 +25,6 @@
 
   & > .input_row {
     $margin: 3px;
-
     @include row_2_items(30%, 3px, $height);
 
     input {

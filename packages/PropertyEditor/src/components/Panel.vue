@@ -5,12 +5,14 @@
       :title="title"
       :closed="closed"
       :toggle="true" />
-    <Group
-      v-if="!closed"
-      v-for="(group,index) in groups" :key="index"
-      :title="group.title"
-      :rows="group.rows"
-      :properties="properties" />
+    <div class="groups">
+      <Group
+          v-if="!closed"
+          v-for="(group,index) in groups" :key="index"
+          :title="group.title"
+          :rows="group.rows"
+          :properties="properties" />
+    </div>
   </div>
 </template>
 

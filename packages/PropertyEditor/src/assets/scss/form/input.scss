@@ -11,6 +11,22 @@
   width: $width;
   height: $height;
   outline: none;
-  border: none;
-  background-color: #000;
+  padding: 0 8px;
+  font-size: 12px;
+
+  @include themify($themes) {
+    font-family: themed("font_input");
+    color: themed("color_text_normal");
+    background-color: themed("color_form_bg_normal");
+    border: 1px solid themed("color_form_border_normal");
+  }
+
+  &:focus,
+  &:hover {
+    @include themify($themes) {
+      color: themed("color_text_focus");
+      background-color: themed("color_form_bg_focus");
+      border-color: themed("color_form_border_focus");
+    }
+  }
 }
