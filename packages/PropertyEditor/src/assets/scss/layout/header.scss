@@ -18,6 +18,7 @@
   text-overflow: ellipsis;
   font-size: 12px;
 
+  @include no-select;
   @include wrapper;
   @include default_transition;
   @include themify($themes) {

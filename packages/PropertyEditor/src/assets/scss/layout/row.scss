@@ -9,6 +9,7 @@
 
 @import "../base/mixins";
 @import "../form/input";
+@import "../form/checkbox";
 
 .pe_row {
   $height: 30px;
@@ -27,8 +28,18 @@
     $margin: 3px;
     @include row_2_items(30%, 3px, $height);
 
-    input {
-      @include form_input(calc(100% - #{2 * $margin}), 22px);
+    & > .left {
+      @include no-select;
+    }
+
+    & > .right {
+      input {
+        @include form_input(calc(100% - #{2 * $margin}), 22px);
+      }
+
+      .pe_checkbox {
+        @include form_checkbox(80px, 22px);
+      }
     }
   }
 }

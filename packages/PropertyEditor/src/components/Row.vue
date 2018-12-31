@@ -4,19 +4,26 @@
       <div class="left">{{info.label}}</div>
       <div class="right">
         <input
+            class="pe_input"
             type="text"
             v-if="isInput()"
             :value="info.bind.object[info.bind.key]"
             @keypress="beforeKeypress($event)"
             @change="beforeChange($event)" />
+        <Checkbox v-if="info.type=='checkbox'" :bind="info.bind" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Checkbox from "./InputBox/Checkbox";
+
 export default {
   name: "Row",
+  components: {
+    Checkbox
+  },
   props: {
     info: {
       type: Object,

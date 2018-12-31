@@ -5,6 +5,7 @@
       <li>{{form.basic._string}}</li>
       <li>{{form.basic._integer}}</li>
       <li>{{form.basic._integer}}</li>
+      <li>{{form.basic._checkbox}}</li>
     </ul>
     <ul>
       <li>{{form.filter._email}}</li>
@@ -22,7 +23,8 @@ export default {
         basic: {
           _string: "Vincent",
           _integer: 20,
-          _float: 3.14159
+          _float: 3.14159,
+          _checkbox: true
         },
         filter: {
           _email: "test@test.com"
@@ -36,7 +38,7 @@ export default {
       title: "PROPERTIES",
       groups: [
         {
-          rows: ["String", "Integer", "Float"]
+          rows: ["String", "Integer", "Float", "Checkbox"]
         },
         {
           title: "FILTER",
@@ -64,6 +66,13 @@ export default {
           bind: {
             object: this.form.basic,
             key: "_float"
+          }
+        },
+        Checkbox: {
+          type: "checkbox",
+          bind: {
+            object: this.form.basic,
+            key: "_checkbox"
           }
         },
         Email: {

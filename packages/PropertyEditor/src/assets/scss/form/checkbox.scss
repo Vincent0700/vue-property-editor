@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/**
+ * form/checkbox.scss
+ * @desc checkbox ui
+ * @author wang.yuanqiu007@gamil.com
+ * @date 2018-12-31
+ */
+
+@import "../base/mixins";
+
+@mixin form_checkbox($width, $height) {
+  width: $width;
+  height: $height;
+  line-height: $height;
+  overflow: hidden;
+  font-size: 12px;
+  position: relative;
+
+  @include themify($themes) {
+    font-family: themed("font_input");
+    color: themed("color_text_normal");
+    background-color: themed("color_form_bg_normal");
+    border: 1px solid themed("color_form_border_normal");
+  }
+
+  .left,
+  .right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    z-index: 10;
+    cursor: pointer;
+
+    @include no-select;
+    @include themify($themes) {
+      color: themed("color_text_normal");
+    }
+
+    &:hover {
+      @include themify($themes) {
+        color: themed("color_text_focus");
+      }
+    }
+  }
+
+  .right {
+    left: 50%;
+  }
+
+  .toggle_button {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+
+    @include default_transition;
+
+    &.btn_true {
+      left: 50%;
+      background-color: #18735e;
+    }
+
+    &.btn_false {
+      left: 0%;
+      background-color: #666;
+    }
+  }
+}
