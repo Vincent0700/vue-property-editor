@@ -1,6 +1,5 @@
 - 开发指南
-
-  - [安装](zh-cn/guide.md#安装)
-    - [npm](zh-cn/guide.md#npm-安装)
-    - [CDN](zh-cn/guide.md#CDN)
-    - [Hello world](zh-cn/guide.md#Hello-world)
+  - [安装](zh-cn/installation.md)
+  - [快速上手](zh-cn/getting_started.md)
+  - [自定义主题](zh-cn/theme.md)
+  
