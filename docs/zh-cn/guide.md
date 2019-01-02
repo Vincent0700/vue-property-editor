@@ -9,3 +9,8 @@
  ```bash
 npm i vue-property-editor -S
 ```
+
+### CDN
+
+目前可以通过 unpkg.com/vue-property-editor 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+
