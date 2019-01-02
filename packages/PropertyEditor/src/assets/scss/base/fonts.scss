@@ -7,19 +7,38 @@
  * @date 2018-12-27
  */
 
-@import "/iconfonts/iconfont.css";
+@import "assets/iconfonts/iconfont.css";
+$font_path: resolve("@assets/fonts/");
 
 @font-face {
   font-family: "Proxima Nova Regular";
-  src: url("/fonts/proxima_nova_regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Proxima Nova Bold";
-  src: url("/fonts/proxima_nova_bold.woff2") format("woff2");
+  src: url("assets/fonts/ProximaNova-Regular.eot");
+  src: url("assets/fonts/ProximaNova-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/ProximaNova-Regular.woff2") format("woff2"),
+    url("assets/fonts/ProximaNova-Regular.woff") format("woff"),
+    url("assets/fonts/ProximaNova-Regular.ttf") format("truetype"),
+    url("assets/fonts/ProximaNova-Regular.svg#ProximaNova-Regular")
+      format("svg");
 }
 
 @font-face {
   font-family: "Inconsolata";
-  src: url("/fonts/Inconsolata-webfont.woff2") format("woff2");
+  src: url("assets/fonts/Inconsolata.eot");
+  src: url("assets/fonts/Inconsolata.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/Inconsolata.woff2") format("woff2"),
+    url("assets/fonts/Inconsolata.woff") format("woff"),
+    url("assets/fonts/Inconsolata.ttf") format("truetype"),
+    url("assets/fonts/Inconsolata.svg#Inconsolata") format("svg");
+}
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url("assets/fonts/ProximaNova-Bold.eot");
+  src: url("assets/fonts/ProximaNova-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/ProximaNova-Bold.woff2") format("woff2"),
+    url("assets/fonts/ProximaNova-Bold.woff") format("woff"),
+    url("assets/fonts/ProximaNova-Bold.ttf") format("truetype"),
+    url("assets/fonts/ProximaNova-Bold.svg#ProximaNova-Bold") format("svg");
 }

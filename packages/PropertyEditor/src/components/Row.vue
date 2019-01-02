@@ -10,7 +10,11 @@
             :value="info.bind.object[info.bind.key]"
             @keypress="beforeKeypress($event)"
             @change="beforeChange($event)" />
-        <Checkbox v-if="info.type=='checkbox'" :bind="info.bind" />
+        <Checkbox
+            v-if="info.type=='checkbox'"
+            :bind="info.bind"
+            :text_true="info.text_true"
+            :text_false="info.text_false" />
       </div>
     </div>
   </div>

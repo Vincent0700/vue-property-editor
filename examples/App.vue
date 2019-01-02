@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <header></header>
     <ul>
       <li>{{form.basic._string}}</li>
       <li>{{form.basic._integer}}</li>
@@ -73,7 +72,9 @@ export default {
           bind: {
             object: this.form.basic,
             key: "_checkbox"
-          }
+          },
+          text_true: "TRUE",
+          text_false: "FALSE"
         },
         Email: {
           type: "string",
@@ -92,7 +93,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 #app {
   width: 100%;
   height: 100vh;

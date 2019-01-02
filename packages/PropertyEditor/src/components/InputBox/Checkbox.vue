@@ -20,7 +20,9 @@ export default {
     },
     bind: {
       type: Object,
-      default: false
+      default: function() {
+        return {};
+      }
     }
   },
   data() {

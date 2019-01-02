@@ -2,6 +2,7 @@ node_modules/
 .idea/
 .vscode/
 lib/
+test/
 
 .DS_Store
 *.log
