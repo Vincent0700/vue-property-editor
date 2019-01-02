@@ -1,3 +1,2 @@
 - Translations
-  - [:uk: English](/guide)
   - [:cn: 中文](/zh-cn/guide)
