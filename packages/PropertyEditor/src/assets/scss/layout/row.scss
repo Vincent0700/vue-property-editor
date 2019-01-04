@@ -10,6 +10,7 @@
 @import "../base/mixins";
 @import "../form/input";
 @import "../form/checkbox";
+@import "../form/slider";
 
 .pe_row {
   $height: 30px;
@@ -33,12 +34,18 @@
     }
 
     & > .right {
+      $box_height: $height - 2 * $margin - 2px;
+
       input {
-        @include form_input(calc(100% - #{2 * $margin}), 22px);
+        @include form_input(calc(100% - #{2 * $margin}), $box_height);
       }
 
       .pe_checkbox {
-        @include form_checkbox(80px, 22px);
+        @include form_checkbox(80px, $box_height);
+      }
+
+      .pe_slider {
+        @include form_slider(100%, $box_height);
       }
     }
   }

@@ -15,18 +15,25 @@
             :bind="info.bind"
             :text_true="info.text_true"
             :text_false="info.text_false" />
+        <Slider
+            v-if="info.type=='slider'"
+            :bind="info.bind"
+            :min_value="info.min_value"
+            :max_value="info.max_value"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Checkbox from "./InputBox/Checkbox";
+import Checkbox from "./Form/Checkbox";
+import Slider from "./Form/Slider";
 
 export default {
   name: "Row",
   components: {
-    Checkbox
+    Checkbox,
+    Slider
   },
   props: {
     info: {

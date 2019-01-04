@@ -2,11 +2,11 @@
 
 vue-property-editor 默认提供一套主题，如需添加自定义样式，请按照以下步骤执行：
 
-1. clone [源码](https://github.com/Vincent0700/vue-property-editor)
+**Step1**. clone [源码](https://github.com/Vincent0700/vue-property-editor)
 
-2. 在 /packages/PropertyEditor/src/assets/scss/themes 目录下新建样式文件 custom_theme.scss
+**Step2**. 在 /packages/PropertyEditor/src/assets/scss/themes 目录下新建样式文件 custom_theme.scss
 
-3. 按照默认样式文件 theme_dark.scss override 相关变量
+**Step3**. 按照默认样式文件 theme_dark.scss override 相关变量
 
 ```scss
 $custom_theme: (
@@ -46,7 +46,7 @@ $custom_theme: (
 );
 ```
 
-4. 修改 index.scss 引入新主题
+**Step4**. 修改 index.scss 引入新主题
 
 ```scss
 @import "./theme_dark"; // dark theme
@@ -59,13 +59,13 @@ $themes: (
 
 ```
 
-5. 编译 lib
+**Step5**. 编译 lib
 
 ```bash
 npm run lib
 ```
 
-6. 编译好的 lib 将会输出到 `lib/` 文件夹，在自己的项目中引用新的 js 和 css 文件，然后在使用 PropertyEditor 组件时 props 的 config 对象指定新添加的 theme，如之前添加的 theme 名称为 `custom`
+**Step6**. 编译好的 lib 将会输出到 `lib/` 文件夹，在自己的项目中引用新的 js 和 css 文件，然后在使用 PropertyEditor 组件时 props 的 config 对象指定新添加的 theme，如之前添加的 theme 名称为 `custom`
 
 
 

@@ -7,6 +7,9 @@
       <li>{{form.basic._checkbox}}</li>
     </ul>
     <ul>
+      <li>{{form.advanced._slider}}</li>
+    </ul>
+    <ul>
       <li>{{form.filter._email}}</li>
     </ul>
     <PropertyEditor :config="config" />
@@ -25,6 +28,9 @@ export default {
           _float: 3.14159,
           _checkbox: true
         },
+        advanced: {
+          _slider: 3.72
+        },
         filter: {
           _email: "test@test.com"
         }
@@ -38,6 +44,11 @@ export default {
       groups: [
         {
           rows: ["String", "Integer", "Float", "Checkbox"]
+        },
+        {
+          title: "ADVANCED",
+          icon: "<i class='pe-icon pe-icon-folder'></i>",
+          rows: ["Slider"]
         },
         {
           title: "FILTER",
@@ -75,6 +86,15 @@ export default {
           },
           text_true: "TRUE",
           text_false: "FALSE"
+        },
+        Slider: {
+          type: "slider",
+          bind: {
+            object: this.form.advanced,
+            key: "_slider"
+          },
+          min_value: 0,
+          max_value: 5
         },
         Email: {
           type: "string",
