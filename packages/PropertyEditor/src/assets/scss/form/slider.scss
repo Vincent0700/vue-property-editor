@@ -6,10 +6,12 @@
  * @author wang.yuanqiu007@gamil.com
  * @date 2019-01-04
  */
+
 @import "../base/mixins";
+@import "../base/variables";
 
 @mixin form_slider($width, $height) {
-  $btn_width: 5%;
+  $btn_width: 7%;
   $bar_height: 50%;
 
   width: $width;
@@ -18,39 +20,61 @@
   font-size: 12px;
   position: relative;
 
-  .slide_bar {
-    width: $width;
-    height: $bar_height;
-    position: absolute;
-    top: 50% - $bar_height/2;
-    z-index: 10;
+  & > .slider_wrapper {
+    width: 0.7 * $width;
+    height: $height + 2px;
+    line-height: $height;
+    font-size: 12px;
+    position: relative;
 
-    @include themify($themes) {
-      font-family: themed("font_input");
-      color: themed("color_text_normal");
-      background-color: themed("color_form_bg_normal");
-      border: 1px solid themed("color_form_border_normal");
+    & > .slide_bar {
+      width: $width;
+      height: $bar_height;
+      position: absolute;
+      top: 50% - $bar_height/2;
+      z-index: 10;
+
+      @include themify($themes) {
+        font-family: themed("font_input");
+        color: themed("color_text_normal");
+        background-color: themed("color_form_bg_normal");
+        border: 1px solid themed("color_form_border_normal");
+      }
+    }
+
+    & > .slide_btn {
+      position: absolute;
+      width: $btn_width;
+      height: calc(100% - 2px);
+      z-index: 20;
+      cursor: pointer;
+
+      @include themify($themes) {
+        font-family: themed("font_input");
+        color: themed("color_text_normal");
+        background-color: themed("color_text_normal");
+        border: 1px solid themed("color_form_border_normal");
+
+        @include transition(background-color, $animate_time);
+
+        &:hover,
+        &.active {
+          background-color: themed("color_text_focus");
+        }
+      }
     }
   }
 
-  .slide_btn {
+  & > .value {
     position: absolute;
-    width: $btn_width;
-    height: 100%;
-    z-index: 20;
-    cursor: pointer;
+    width: calc(#{$width * 0.3} - 10px);
+    right: 0;
+    margin-top: -$height;
+    text-align: right;
 
     @include themify($themes) {
       font-family: themed("font_input");
       color: themed("color_text_normal");
-      background-color: themed("color_text_normal");
-      border: 1px solid themed("color_form_border_normal");
-
-      @include transition(background-color, 0.1s);
-
-      &:hover {
-        background-color: themed("color_text_focus");
-      }
     }
   }
 }

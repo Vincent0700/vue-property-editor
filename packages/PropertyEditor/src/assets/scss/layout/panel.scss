@@ -17,6 +17,7 @@
   bottom: 0;
   width: 320px;
 
+  @include no-select;
   @include transition(all, 0.1s);
   @include themify($themes) {
     color: themed("color_text_normal");

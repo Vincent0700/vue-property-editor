@@ -6,10 +6,10 @@
         <input
             class="pe_input"
             type="text"
-            v-if="isInput()"
+            v-if="IsInput()"
             :value="info.bind.object[info.bind.key]"
-            @keypress="beforeKeypress($event)"
-            @change="beforeChange($event)" />
+            @keypress="BeforeKeyPress($event)"
+            @change="BeforeChange($event)" />
         <Checkbox
             v-if="info.type=='checkbox'"
             :bind="info.bind"
@@ -42,12 +42,12 @@ export default {
     }
   },
   methods: {
-    isInput() {
+    IsInput() {
       const type = this.info.type;
       const arr = ["string", "integer", "float"];
       return arr.indexOf(type) != -1;
     },
-    beforeKeypress(event) {
+    BeforeKeyPress(event) {
       const type = this.info.type;
       const key = event.key;
 
@@ -65,10 +65,10 @@ export default {
 
       // Commit changes if press enter
       if (key === "Enter") {
-        this.beforeChange(event);
+        this.BeforeChange(event);
       }
     },
-    beforeChange(event) {
+    BeforeChange(event) {
       const type = this.info.type;
       const old = this.info.bind.object[this.info.bind.key];
       let value = event.target.value;

@@ -24,14 +24,21 @@
   white-space: nowrap;
   font-weight: normal;
   font-style: normal;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+
+  @include default_transition;
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed("color_row_hover");
+      margin-left: -5px;
+    }
+  }
 
   & > .input_row {
     $margin: 3px;
     @include row_2_items(30%, 3px, $height);
-
-    & > .left {
-      @include no-select;
-    }
 
     & > .right {
       $box_height: $height - 2 * $margin - 2px;

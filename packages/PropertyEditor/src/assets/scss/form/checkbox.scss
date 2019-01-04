@@ -33,7 +33,7 @@
     z-index: 10;
     cursor: pointer;
 
-    @include no-select;
+    @include default_transition;
     @include themify($themes) {
       color: themed("color_text_normal");
     }

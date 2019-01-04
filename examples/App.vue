@@ -47,7 +47,7 @@ export default {
         },
         {
           title: "ADVANCED",
-          icon: "<i class='pe-icon pe-icon-folder'></i>",
+          icon: "<i class='pe-icon pe-icon-threeway'></i>",
           rows: ["Slider"]
         },
         {
@@ -93,7 +93,7 @@ export default {
             object: this.form.advanced,
             key: "_slider"
           },
-          min_value: 0,
+          min_value: -5,
           max_value: 5
         },
         Email: {

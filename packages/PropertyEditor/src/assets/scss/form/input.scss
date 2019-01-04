@@ -7,6 +7,8 @@
  * @date 2018-12-28
  */
 
+@import "../base/mixins";
+
 @mixin form_input($width, $height) {
   width: $width;
   height: $height;
@@ -14,6 +16,7 @@
   padding: 0 8px;
   font-size: 12px;
 
+  @include transition(all, 0.3s);
   @include themify($themes) {
     font-family: themed("font_input");
     color: themed("color_text_normal");
