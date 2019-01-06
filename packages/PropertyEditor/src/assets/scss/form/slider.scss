@@ -69,12 +69,11 @@
     position: absolute;
     width: calc(#{$width * 0.3} - 10px);
     right: 0;
-    margin-top: -$height;
+    margin-top: -$height - 1px;
     text-align: right;
 
     @include themify($themes) {
       font-family: themed("font_input");
-      color: themed("color_text_normal");
     }
   }
 }

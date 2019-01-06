@@ -4,9 +4,9 @@
       <li>{{form.basic._string}}</li>
       <li>{{form.basic._integer}}</li>
       <li>{{form.basic._integer}}</li>
-      <li>{{form.basic._checkbox}}</li>
     </ul>
     <ul>
+      <li>{{form.advanced._switch}}</li>
       <li>{{form.advanced._slider}}</li>
     </ul>
     <ul>
@@ -25,10 +25,10 @@ export default {
         basic: {
           _string: "Vincent",
           _integer: 20,
-          _float: 3.14159,
-          _checkbox: true
+          _float: 3.14159
         },
         advanced: {
+          _switch: true,
           _slider: 3.72
         },
         filter: {
@@ -38,17 +38,54 @@ export default {
     };
   },
   created() {
+    class Binder {
+      constructor(object, key) {
+        this.object = object;
+        this.key = key;
+      }
+    }
+
+    const InputTypes = {
+      String: "String",
+      Integer: "Integer",
+      Float: "Float",
+      Switch: "Switch",
+      Slider: "Slider"
+    };
+
+    function ShowInInspector(type) {
+      return (target, property, descriptor) => {
+        console.log(target, property, descriptor);
+        // target[property] = type;
+      };
+    }
+    const self = this;
+
+    class InspectorWindow {
+      constructor() {
+        // this.name = new Binder(self.)
+      }
+      @ShowInInspector(InputTypes.String)
+      Name(val) {
+        return val;
+      }
+    }
+
+    let x = new InspectorWindow();
+    console.log(x);
+
     this.config = {
-      theme: "dark",
       title: "PROPERTIES",
       groups: [
         {
-          rows: ["String", "Integer", "Float", "Checkbox"]
+          title: "BASIC",
+          icon: "<i class='pe-icon pe-icon-default'></i>",
+          rows: ["String", "Integer", "Float"]
         },
         {
           title: "ADVANCED",
           icon: "<i class='pe-icon pe-icon-threeway'></i>",
-          rows: ["Slider"]
+          rows: ["Switch", "Slider"]
         },
         {
           title: "FILTER",
@@ -78,14 +115,12 @@ export default {
             key: "_float"
           }
         },
-        Checkbox: {
-          type: "checkbox",
+        Switch: {
+          type: "switch",
           bind: {
-            object: this.form.basic,
-            key: "_checkbox"
-          },
-          text_true: "TRUE",
-          text_false: "FALSE"
+            object: this.form.advanced,
+            key: "_switch"
+          }
         },
         Slider: {
           type: "slider",
@@ -117,7 +152,7 @@ export default {
 #app {
   width: 100%;
   height: 100vh;
-  background-color: #fff;
-  color: #666;
+  background: url("assets/images/pw_maze_black.png");
+  color: #eee;
 }
 </style>

@@ -3,8 +3,7 @@
     <Header
       icon="<i class='pe-icon pe-icon-arrow-circle-down'></i>"
       :title="title"
-      :closed="closed"
-      :toggle="true" />
+      :isTopHeader="true" />
     <div class="groups">
       <Group
           v-if="!closed"

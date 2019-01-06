@@ -10,8 +10,8 @@
             :value="info.bind.object[info.bind.key]"
             @keypress="BeforeKeyPress($event)"
             @change="BeforeChange($event)" />
-        <Checkbox
-            v-if="info.type=='checkbox'"
+        <Switcher
+            v-if="info.type=='switch'"
             :bind="info.bind"
             :text_true="info.text_true"
             :text_false="info.text_false" />
@@ -26,13 +26,13 @@
 </template>
 
 <script>
-import Checkbox from "./Form/Checkbox";
+import Switcher from "./Form/Switcher";
 import Slider from "./Form/Slider";
 
 export default {
   name: "Row",
   components: {
-    Checkbox,
+    Switcher,
     Slider
   },
   props: {

@@ -8,9 +8,9 @@
 
 ![](https://raw.githubusercontent.com/Vincent0700/personal-image-hosting/master/images/vue-property-editor/vpe_type_string.png)
 
-可选配置：
+- 可选配置：
 
-- {Function} `filter` 自定义过滤器 | null
+  - {Function} `filter` 自定义过滤器 | null
 
 ### integer
 
@@ -18,9 +18,9 @@
 
 ![](https://raw.githubusercontent.com/Vincent0700/personal-image-hosting/master/images/vue-property-editor/vpe_type_integer.png)
 
-可选配置：
+- 可选配置：
 
-- {Function} `filter` 自定义过滤器 | null
+  - {Function} `filter` 自定义过滤器 | null
 
 ### float
 
@@ -28,17 +28,31 @@
 
 ![](https://raw.githubusercontent.com/Vincent0700/personal-image-hosting/master/images/vue-property-editor/vpe_type_integer.png)
 
-可选配置：
+- 可选配置：
 
-- {Function} `filter` 自定义过滤器 | null
+  - {Function} `filter` 自定义过滤器 | null
 
-### checkbox
 
-布尔类型，鼠标选择
+## 进阶类型
+
+### switch
+
+布尔类型
 
 ![](https://raw.githubusercontent.com/Vincent0700/personal-image-hosting/master/images/vue-property-editor/vpe_type_checkbox.png)
 
-可选配置：
+- 可选配置：
 
-- {String} `text_true` 正确文字 | "ON"
-- {String} `text_false` 错误文字 | "OFF"
+  - {String} `text_true` 正确文字 | "ON"
+  - {String} `text_false` 错误文字 | "OFF"
+
+### slider
+
+滑块类型
+
+![](https://raw.githubusercontent.com/Vincent0700/personal-image-hosting/master/images/vue-property-editor/vpe_type_slider.png)
+
+- 必填配置：
+
+  - {Number} `min_value` 最小值
+  - {Number} `max_value` 最大值

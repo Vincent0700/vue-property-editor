@@ -27,7 +27,7 @@
   &:focus,
   &:hover {
     @include themify($themes) {
-      color: themed("color_text_focus");
+      color: themed("color_form_text_focus");
       background-color: themed("color_form_bg_focus");
       border-color: themed("color_form_border_focus");
     }

@@ -9,7 +9,7 @@
 
 @import "../base/mixins";
 @import "../form/input";
-@import "../form/checkbox";
+@import "../form/switch";
 @import "../form/slider";
 
 .pe_row {
@@ -28,11 +28,13 @@
   border-right: 3px solid transparent;
 
   @include default_transition;
+  @include border-radius(1px);
 
-  &:hover {
+  &:hover,
+  &.active {
     @include themify($themes) {
-      background-color: themed("color_row_hover");
-      margin-left: -5px;
+      background-color: themed("color_row_hover_bg");
+      color: themed("color_text_focus");
     }
   }
 
@@ -47,8 +49,8 @@
         @include form_input(calc(100% - #{2 * $margin}), $box_height);
       }
 
-      .pe_checkbox {
-        @include form_checkbox(80px, $box_height);
+      .pe_switch {
+        @include form_switch(80px, $box_height);
       }
 
       .pe_slider {

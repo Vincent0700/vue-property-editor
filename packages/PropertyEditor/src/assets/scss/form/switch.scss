@@ -9,7 +9,7 @@
 
 @import "../base/mixins";
 
-@mixin form_checkbox($width, $height) {
+@mixin form_switch($width, $height) {
   width: $width;
   height: $height;
   line-height: $height;
@@ -58,12 +58,18 @@
 
     &.btn_true {
       left: 50%;
-      background-color: #18735e;
+
+      @include themify($themes) {
+        background-color: themed("color_form_switch_true");
+      }
     }
 
     &.btn_false {
       left: 0%;
-      background-color: #666;
+
+      @include themify($themes) {
+        background-color: themed("color_form_switch_false");
+      }
     }
   }
 }

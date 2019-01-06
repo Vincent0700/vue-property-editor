@@ -1,5 +1,5 @@
 <template>
-  <div class="pe_checkbox">
+  <div class="pe_switch">
     <div class="left" @click="OnChange(false)">{{text_false}}</div>
     <div class="right" @click="OnChange(true)">{{text_true}}</div>
     <div :class="['toggle_button', bind.object[bind.key]?'btn_true':'btn_false']"></div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Checkbox",
+  name: "Switcher",
   props: {
     text_true: {
       type: String,

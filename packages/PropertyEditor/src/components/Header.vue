@@ -1,5 +1,5 @@
 <template>
-  <div class="pe_header" >
+  <div :class="['pe_header', isTopHeader ? 'main' : '']" >
     <div class="icon" @click="TogglePanel()" v-html="`${icon?icon:'<i class=\'pe-icon pe-icon-default\'></i>'}`"></div>
     <div class="title">{{title}}</div>
   </div>
@@ -11,11 +11,7 @@ import bus from "../js/bus";
 export default {
   name: "Header",
   props: {
-    closed: {
-      type: Boolean,
-      default: false
-    },
-    toggle: {
+    isTopHeader: {
       type: Boolean,
       default: false
     },
@@ -30,7 +26,7 @@ export default {
   },
   methods: {
     TogglePanel() {
-      if (this.toggle) {
+      if (this.isTopHeader) {
         bus.$emit("UIEvent.TogglePanel");
       }
     }

@@ -9,16 +9,21 @@
 
 $theme_dark: (
   color_panel_bg: #364346,
+  color_top_header: #444,
   color_header_normal: #283538,
-  color_row_hover: #000,
+  color_row_hover_bg: #191919,
   color_icon_normal: #f60,
   color_icon_focus: #fff,
+  color_group_border: #232323,
   color_text_normal: #b1b8ba,
   color_text_focus: #fff,
   color_form_bg_normal: #2c393c,
-  color_form_bg_focus: #20292b,
+  color_form_bg_focus: #ccc,
+  color_form_text_focus: #333,
   color_form_border_normal: #293538,
   color_form_border_focus: #20292b,
+  color_form_switch_true: #18735e,
+  color_form_switch_false: #666,
   font_content: (
     "Proxima Nova Regular",
     "Helvetica Neue",

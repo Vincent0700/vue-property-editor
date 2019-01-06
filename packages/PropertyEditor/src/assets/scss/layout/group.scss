@@ -6,15 +6,22 @@
  * @author wang.yuanqiu007@gamil.com
  * @date 2018-12-28
  */
-
 @import "../base/mixins";
+@import "../themes/index";
 
 .groups {
   @include wrapper;
 
   & > .pe_group {
+    margin: 3px;
+    border-radius: 3px;
+
+    @include themify($themes) {
+      border: 2px solid themed("color_group_border");
+    }
+
     & > .content {
-      padding: 8px 3px 8px 8px;
+      padding: 8px 3px;
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "vue-property-editor",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "基于Vue的属性编辑器",
   "license": "MIT",
   "repository": {
