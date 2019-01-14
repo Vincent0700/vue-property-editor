@@ -38,41 +38,41 @@ export default {
     };
   },
   created() {
-    class Binder {
-      constructor(object, key) {
-        this.object = object;
-        this.key = key;
-      }
-    }
-
-    const InputTypes = {
-      String: "String",
-      Integer: "Integer",
-      Float: "Float",
-      Switch: "Switch",
-      Slider: "Slider"
-    };
-
-    function ShowInInspector(type) {
-      return (target, property, descriptor) => {
-        console.log(target, property, descriptor);
-        // target[property] = type;
-      };
-    }
-    const self = this;
-
-    class InspectorWindow {
-      constructor() {
-        // this.name = new Binder(self.)
-      }
-      @ShowInInspector(InputTypes.String)
-      Name(val) {
-        return val;
-      }
-    }
-
-    let x = new InspectorWindow();
-    console.log(x);
+    // class Binder {
+    //   constructor(object, key) {
+    //     this.object = object;
+    //     this.key = key;
+    //   }
+    // }
+    //
+    // const InputTypes = {
+    //   String: "String",
+    //   Integer: "Integer",
+    //   Float: "Float",
+    //   Switch: "Switch",
+    //   Slider: "Slider"
+    // };
+    //
+    // function ShowInInspector(type) {
+    //   return (target, property, descriptor) => {
+    //     console.log(target, property, descriptor);
+    //     // target[property] = type;
+    //   };
+    // }
+    // const self = this;
+    //
+    // class InspectorWindow {
+    //   constructor() {
+    //     // this.name = new Binder(self.)
+    //   }
+    //   @ShowInInspector(InputTypes.String)
+    //   set Name(val) {
+    //     return val;
+    //   }
+    // }
+    //
+    // let x = new InspectorWindow();
+    // console.log(x);
 
     this.config = {
       title: "PROPERTIES",
